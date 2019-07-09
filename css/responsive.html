@@ -4,33 +4,52 @@
     <title>Responsive</title>
     <style>
       body {
-        display: flex;
-        flex-wrap: wrap;
-        justify-content: center;
         margin: 0;
         padding: 0;
       }
 
+      .container {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+      }
+
       .card {
-        width: calc(20vw - 20px);
-        height: calc(20vw - 20px);
+        width: calc(20% - 20px);
+        padding-bottom: calc(20% - 20px);
         margin: 10px;
         background-color: pink;
+      }
+
+      @media only screen and (max-width: 768px) {
+        .card {
+          width: calc(33.33% - 20px);
+          padding-bottom: calc(33.33% - 20px);
+        }
+      }
+
+      @media only screen and (max-width: 375px) {
+        .card {
+          width: 100%;
+          padding-bottom: 100%;
+        }
       }
     </style>
   </head>
   <body>
-    <div class="card"></div>
-    <div class="card"></div>
-    <div class="card"></div>
-    <div class="card"></div>
-    <div class="card"></div>
-    <div class="card"></div>
-    <div class="card"></div>
-    <div class="card"></div>
-    <div class="card"></div>
-    <div class="card"></div>
-    <div class="card"></div>
-    <div class="card"></div>
+    <div class="container">
+      <div class="card"></div>
+      <div class="card"></div>
+      <div class="card"></div>
+      <div class="card"></div>
+      <div class="card"></div>
+      <div class="card"></div>
+      <div class="card"></div>
+      <div class="card"></div>
+      <div class="card"></div>
+      <div class="card"></div>
+      <div class="card"></div>
+      <div class="card"></div>
+    </div>
   </body>
 </html>
