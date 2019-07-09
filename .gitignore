@@ -1,0 +1,8 @@
+# api
+api
+
+# misc
+.DS_Store
+
+# modules
+node_modules
