@@ -1,0 +1,45 @@
+<html>
+  <head>
+    <title>Box model</title>
+    <style>
+      .box {
+        box-sizing: border-box;
+        background-color: yellow;
+        width: 100px;
+        height: 160px;
+        padding: 20px;
+        margin: 30px;
+        border: 20px solid blue;
+        outline: 10px solid red;
+      }
+
+      .block {
+        display: block;
+      }
+
+      .inline-block {
+        display: inline-block;
+      }
+
+      .inline {
+        display: inline;
+      }
+
+      .shadow {
+        width: 200px;
+        height: 200px;
+        box-shadow: inset 0 0 30px rgba(0, 0, 0, 0.5);
+      }
+    </style>
+  </head>
+  <body>
+    <div class="box block">Content 1</div>
+    <div class="box block">Content 2</div>
+
+    <div class="box inline-block">Content 3</div>
+    <div class="box inline-block">Content 4</div>
+
+    <span class="box inline">Content 5</span>
+    <div class="shadow"></div>
+  </body>
+</html>

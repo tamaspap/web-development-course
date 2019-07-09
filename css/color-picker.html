@@ -1,0 +1,58 @@
+<html>
+  <head>
+    <title>Color picker</title>
+    <style>
+      #red,
+      #green,
+      #blue {
+        width: 100%;
+      }
+    </style>
+  </head>
+  <body>
+    <fieldset>
+      <legend>Red</legend>
+      <input type="range" min="0" max="255" id="red" />
+    </fieldset>
+
+    <fieldset>
+      <legend>Green</legend>
+      <input type="range" min="0" max="255" id="green" />
+    </fieldset>
+
+    <fieldset>
+      <legend>Blue</legend>
+      <input type="range" min="0" max="255" id="blue" />
+    </fieldset>
+
+    <script>
+      var red = 0;
+      var green = 0;
+      var blue = 0;
+      var rgb;
+
+      function setBackgroundColor() {
+        rgb = "rgb(" + red + "," + green + "," + blue + ")";
+        document.body.style.backgroundColor = rgb;
+      }
+
+      var redInput = document.getElementById("red");
+      redInput.addEventListener("change", function(event) {
+        red = event.target.value;
+        setBackgroundColor(red, green, blue);
+      });
+
+      var greenInput = document.getElementById("green");
+      greenInput.addEventListener("change", function(event) {
+        green = event.target.value;
+        setBackgroundColor(red, green, blue);
+      });
+
+      var blueInput = document.getElementById("blue");
+      blueInput.addEventListener("change", function(event) {
+        blue = event.target.value;
+        setBackgroundColor(red, green, blue);
+      });
+    </script>
+  </body>
+</html>

@@ -1,0 +1,36 @@
+body {
+  margin: 0;
+  padding: 0;
+  background-color: #e9ebee;
+}
+
+.header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 42px;
+  background-color: #4267c1;
+}
+
+.container {
+  display: flex;
+  margin-top: 52px;
+  padding: 0 10px;
+}
+
+.sidebar {
+  width: 180px;
+}
+
+.content {
+  flex-grow: 1;
+}
+
+.friendSuggestions {
+  height: 100vh;
+  width: 244px;
+  background-color: #fff;
+  border: 1px solid #dddfe2;
+  border-radius: 3px;
+}
