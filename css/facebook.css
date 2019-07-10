@@ -23,6 +23,22 @@ body {
   width: 180px;
 }
 
+.sidebar-menu {
+  margin-bottom: 20px;
+}
+
+.sidebar-menu-item {
+  display: block;
+  padding: 4px;
+  text-decoration: none;
+  color: #000;
+  background-image: url("https://static.xx.fbcdn.net/rsrc.php/v3/yI/r/h9h0y4GV6z5.png");
+}
+
+.sidebar-menu-item.active {
+  font-weight: bold;
+}
+
 .content {
   flex-grow: 1;
 }

@@ -1,0 +1,26 @@
+<html>
+  <head>
+    <title>Animations</title>
+    <style>
+      .card {
+        width: 300px;
+        height: 300px;
+        background-color: aquamarine;
+        animation: moveToRight 2s cubic-bezier(0, 0.99, 0, 1) forwards 3;
+      }
+
+      @keyframes moveToRight {
+        from {
+          margin-left: 0;
+        }
+
+        to {
+          margin-left: 100px;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="card"></div>
+  </body>
+</html>
