@@ -1,0 +1,27 @@
+<html>
+  <head>
+    <title>Functions</title>
+  </head>
+  <body>
+    <script>
+      function add(a, b) {
+        return a + b;
+      }
+
+      function multiply(a, b) {
+        return a * b;
+      }
+
+      function divide(a, b) {
+        if (b === 0) {
+          console.error("Can not divide with 0");
+          return;
+        }
+
+        return a / b;
+      }
+
+      console.log(divide(30, 0));
+    </script>
+  </body>
+</html>

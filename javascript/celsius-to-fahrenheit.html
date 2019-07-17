@@ -1,0 +1,48 @@
+<html>
+  <head>
+    <title>Temperature convertor</title>
+    <style>
+      .input {
+        padding: 8px 16px;
+        font-size: 24px;
+      }
+
+      .input:focus {
+        border-color: blue;
+        outline: none;
+      }
+    </style>
+  </head>
+  <body>
+    <input
+      type="number"
+      id="celsius"
+      name="celsius"
+      placeholder="Celsius"
+      class="input"
+    />
+
+    <input
+      type="number"
+      id="fahrenheit"
+      name="fahrenheit"
+      placeholder="Fahrenheit"
+      class="input"
+      readonly
+    />
+    <script>
+      function celsiusToFahrenheit(celsius) {
+        return (celsius * 9) / 5 + 32;
+      }
+
+      var celsiusInput = document.getElementById("celsius");
+      var fahrenheitInput = document.getElementById("fahrenheit");
+
+      celsiusInput.addEventListener("change", function() {
+        var celsius = celsiusInput.value;
+        var fahrenheit = celsiusToFahrenheit(celsius);
+        fahrenheitInput.value = fahrenheit;
+      });
+    </script>
+  </body>
+</html>
