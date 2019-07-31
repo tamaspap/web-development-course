@@ -1,0 +1,34 @@
+<html>
+  <body>
+    <script>
+      var car = {
+        name: "Audi",
+        model: "A4",
+        speed: 0,
+        engineStarted: false,
+        startEngine: function() {
+          this.engineStarted = true;
+          console.log("Engine started..");
+        },
+        stopEngine: function() {
+          this.engineStarted = false;
+          console.log("Engine stopped..");
+        },
+        accelerate: function(acceleration) {
+          this.speed = this.speed + acceleration;
+          console.log("Running with " + this.speed + " km/h");
+        },
+        break: function(deceleration) {
+          this.speed = this.speed - deceleration;
+          console.log("Running with " + this.speed + " km/h");
+        }
+      };
+
+      car.startEngine();
+      car.accelerate(10);
+      car.accelerate(20);
+      car.break(30);
+      car.stopEngine();
+    </script>
+  </body>
+</html>

@@ -1,0 +1,20 @@
+<html>
+  <body>
+    <script>
+      function minimum(array) {
+        var min = array[0];
+
+        for (var index = 0; index <= array.length - 1; index++) {
+          if (array[index] < min) {
+            min = array[index];
+          }
+        }
+
+        return min;
+      }
+
+      console.log(minimum(["b", "a", "c"]));
+      console.log(minimum([9, 8, 2, 6]));
+    </script>
+  </body>
+</html>

@@ -1,0 +1,18 @@
+<html>
+  <body>
+    <script>
+      function generateNumber() {
+        return Math.ceil(Math.random() * 49);
+      }
+
+      var numbers = [];
+
+      while (numbers.length < 6) {
+        var number = generateNumber();
+        if (!numbers.includes(number)) numbers.push(number);
+      }
+
+      console.log(numbers);
+    </script>
+  </body>
+</html>
