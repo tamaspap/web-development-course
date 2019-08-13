@@ -1,0 +1,36 @@
+<html>
+  <head>
+    <title>Lightbulb</title>
+  </head>
+  <body>
+    <img
+      id="lightBulb"
+      src="https://image.flaticon.com/icons/png/128/18/18310.png"
+    />
+
+    <button id="switchOn">Switch On</button>
+    <button id="switchOff">Switch Off</button>
+
+    <script>
+      document.getElementById("switchOn").addEventListener("click", function() {
+        document
+          .getElementById("lightBulb")
+          .setAttribute(
+            "src",
+            "https://emojipedia-us.s3.dualstack.us-west-1.amazonaws.com/thumbs/160/au-kddi/194/electric-light-bulb_1f4a1.png"
+          );
+      });
+
+      document
+        .getElementById("switchOff")
+        .addEventListener("click", function() {
+          document
+            .getElementById("lightBulb")
+            .setAttribute(
+              "src",
+              "https://image.flaticon.com/icons/png/128/18/18310.png"
+            );
+        });
+    </script>
+  </body>
+</html>
