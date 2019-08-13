@@ -1,0 +1,59 @@
+<html>
+  <head>
+    <title>Shopping list</title>
+    <style>
+      body {
+        background-color: #f5f5f5;
+      }
+
+      .shoppingList {
+        width: 320px;
+        margin: 80px auto 0;
+        padding: 20px;
+        background-color: #fff;
+        box-sizing: border-box;
+        border-radius: 6px;
+        box-shadow: 0 0 16px rgba(0, 0, 0, 0.1);
+      }
+
+      .shoppingList-input {
+        width: 100%;
+        margin-bottom: 20px;
+        padding: 8px 12px;
+        font-size: 18px;
+      }
+
+      .shoppingList-items {
+        margin: 0;
+        padding: 0;
+        list-style: none;
+      }
+
+      .shoppingList-item {
+        margin-bottom: 8px;
+        font-size: 18px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="shoppingList">
+      <input id="shoppingList-input" class="shoppingList-input" />
+      <ul id="shoppingList-items" class="shoppingList-items"></ul>
+    </div>
+
+    <script>
+      var inputElement = document.getElementById("shoppingList-input");
+      var itemsElement = document.getElementById("shoppingList-items");
+
+      inputElement.addEventListener("keypress", function(event) {
+        if (event.code === "Enter") {
+          var itemElement = document.createElement("LI");
+          itemElement.setAttribute("class", "shoppingList-item");
+          itemElement.innerHTML = inputElement.value;
+          itemsElement.appendChild(itemElement);
+          inputElement.value = "";
+        }
+      });
+    </script>
+  </body>
+</html>
