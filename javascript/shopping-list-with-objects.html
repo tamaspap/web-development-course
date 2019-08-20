@@ -48,18 +48,36 @@
     <script>
       var inputElement = document.getElementById("shoppingList-input");
       var itemsElement = document.getElementById("shoppingList-items");
+      var savedShoppingList = localStorage.getItem("shoppingList");
+      var shoppingList = [];
+
+      if (savedShoppingList) {
+        shoppingList = JSON.parse(savedShoppingList);
+        render(shoppingList);
+      }
+
+      function render(items) {
+        itemsElement.innerHTML = "";
+        for (var index = 0; index < items.length; index++) {
+          var item = items[index]; // {name: 'Bread', comoleted: false}
+          var shoppingListItem = document.createElement("LI");
+          shoppingListItem.setAttribute("class", "shoppingList-item");
+          shoppingListItem.innerHTML = item.name;
+          itemsElement.appendChild(shoppingListItem);
+        }
+      }
 
       inputElement.addEventListener("keypress", function(event) {
-        if (event.code === "Enter") {
-          var itemElement = document.createElement("LI");
-          itemElement.setAttribute("class", "shoppingList-item");
-          itemElement.innerHTML = inputElement.value;
-          itemsElement.appendChild(itemElement);
-          inputElement.value = "";
+        if (event.key === "Enter") {
+          var item = {
+            name: inputElement.value,
+            completed: false
+          };
 
-          itemElement.addEventListener("click", function() {
-            itemElement.classList.add("shoppingList-item-done");
-          });
+          inputElement.value = "";
+          shoppingList.push(item);
+          localStorage.setItem("shoppingList", JSON.stringify(shoppingList));
+          render(shoppingList);
         }
       });
     </script>
