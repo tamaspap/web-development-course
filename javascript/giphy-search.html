@@ -1,0 +1,47 @@
+<html>
+  <head>
+    <title>Shopping list</title>
+    <style>
+      body {
+        background-color: #f5f5f5;
+      }
+
+      img {
+        width: 200px;
+        height: auto;
+      }
+    </style>
+  </head>
+  <body>
+    <input id="search" />
+    <div id="imageList"></div>
+
+    <script>
+      var searchElement = document.getElementById("search");
+      var imageList = document.getElementById("imageList");
+
+      searchElement.addEventListener("keypress", function(event) {
+        if (event.key === "Enter") {
+          var keyword = searchElement.value;
+          fetch(
+            "https://b682nc9ec1.execute-api.us-east-1.amazonaws.com/dev/giphy/search?search=" +
+              keyword
+          )
+            .then(function(response) {
+              return response.json();
+            })
+            .then(function(images) {
+              imageList.innerHTML = "";
+              for (var index = 0; index < images.length; index++) {
+                var src = images[index];
+                const imageItem = document.createElement("IMG");
+                console.log(src);
+                imageItem.setAttribute("src", src);
+                imageList.appendChild(imageItem);
+              }
+            });
+        }
+      });
+    </script>
+  </body>
+</html>
