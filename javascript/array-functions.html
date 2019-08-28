@@ -1,0 +1,28 @@
+<html>
+  <head>
+    <title>array functions</title>
+  </head>
+  <body>
+    <script>
+      const numbers = [1, 2, 3, 4, 5];
+      const a = numbers.forEach(function(number) {
+        console.log(number);
+      });
+
+      const doubled = numbers.map(function(number) {
+        return number * 2;
+      });
+
+      console.log(doubled);
+      const plusOne = numbers.map(function(number){
+          return number + 1;
+      })
+      console.log(plusOne);
+      const oddNumbers =  numbers.filter(function(number){
+          return number % 2 !==0
+          
+      })
+      console.log(oddNumbers)
+    </script>
+  </body>
+</html>

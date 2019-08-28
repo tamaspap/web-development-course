@@ -1,0 +1,38 @@
+<html>
+  <head>
+    <title>
+      events
+    </title>
+    <style>
+      #box {
+        background-color: black;
+        width: 100px;
+        height: 100px;
+        position: absolute;
+        top: 0px;
+        left: 0px;
+        transition: top 0.5s linear, left 0.5s linear;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="box"></div>
+
+    <script>
+      var boxElement = document.getElementById("box");
+      boxElement.addEventListener("click", function() {
+        boxElement.style.backgroundColor = "pink";
+        console.log("You clicked the box");
+      });
+
+      setInterval(function() {
+        var top = Math.floor(Math.random() * window.innerHeight) - 100;
+        var left = Math.floor(Math.random() * window.innerWidth) - 100;
+        boxElement.style.top = top + "px";
+        boxElement.style.left = left + "px";
+
+        console.log("You moved the mouse over the div");
+      }, 500);
+    </script>
+  </body>
+</html>

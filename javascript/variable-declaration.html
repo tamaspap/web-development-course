@@ -1,0 +1,32 @@
+<html>
+  <head>
+    <title>variable declaration</title>
+  </head>
+  <body>
+    <script>
+      function useVar() {
+        var a = 1;
+        if (1 === 1) {
+          var a = 2;
+          console.log(a);
+        }
+
+        console.log(a);
+      }
+
+      //useVar();
+
+      function useLet() {
+        let a = 1;
+        if (1 === 1) {
+          let a = 2;
+          console.log(a);
+        }
+
+        console.log(a);
+      }
+
+      useLet();
+    </script>
+  </body>
+</html>
