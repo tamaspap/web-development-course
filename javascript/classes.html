@@ -1,0 +1,32 @@
+<html>
+  <body>
+    <script>
+      class Animal {
+        constructor(name) {
+          this.name = name;
+        }
+
+        walk() {
+          console.log(`I am ${this.name}, and I'm walking..`);
+        }
+      }
+
+      class Dog extends Animal {
+        bark() {
+          console.log(`I am ${this.name}, and I'm barking..`);
+        }
+      }
+
+      const dog = new Dog("Rex");
+      const cat = new Animal("Leon");
+
+      console.log("Dog", dog.name);
+      console.log("Cat", cat.name);
+
+      dog.walk();
+      dog.bark();
+      cat.walk();
+      cat.bark(); // Error
+    </script>
+  </body>
+</html>

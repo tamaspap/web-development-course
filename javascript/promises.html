@@ -1,0 +1,16 @@
+<html>
+  <body>
+    <script>
+      const promise = new Promise((resolve, reject) => {
+        if (Math.random() < 0.5) resolve("OK");
+        else reject(new Error("Something went wrong.."));
+      });
+
+      promise
+        .then(result => {
+          console.log(`Result is: ${result}`);
+        })
+        .catch(error => console.log(error));
+    </script>
+  </body>
+</html>

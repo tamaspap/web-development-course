@@ -1,0 +1,25 @@
+<html>
+  <body>
+    <script>
+      const loadWeather = city => {
+        const promise = fetch(
+          `http://api.openweathermap.org/data/2.5/weather?q=${city}&APPID=9ce1cfc488dbb344b2fbdda8ad14516d&units=metric`
+        );
+
+        promise
+          .then(response => {
+            return response.json();
+          })
+          .then(result => {
+            console.log(city, result.main.temp);
+          });
+      };
+
+      loadWeather("Cluj-Napoca");
+      loadWeather("Floresti");
+      loadWeather("London");
+      loadWeather("Los Angeles");
+      loadWeather("Miami");
+    </script>
+  </body>
+</html>
